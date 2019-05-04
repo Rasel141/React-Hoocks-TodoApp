@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Todo from './components/Todo'
+import TodoForm from './components/TodoForm'
 
 import './App.css'
 
@@ -19,18 +20,37 @@ const App = () => {
     }
   ])
 
-  const submitHandler = e => {
-    e.preventDefault()
+  const addTodo = text => {
+    const newTodo = [...todos, { text }]
+    setTodos(newTodo)
+  }
+
+  const completeTodo = index => {
+    const newTodos = [...todos]
+    newTodos[index].isCompleted = true
+    setTodos(newTodos)
+  }
+
+  const removeTodo = index => {
+    const newTodos = [...todos]
+    newTodos.splice(index, 1)
+    setTodos(newTodos)
   }
 
   return (
     <div className='app'>
-      {todos.map((todo, index) => (
-        <Todo key={index} index={index} todo={todo} />
-      ))}
-      <form onSubmit={submitHandler}>
-        <input type='text' className='input' placeholder='Add todo...' />
-      </form>
+      <div className='todo-list'>
+        {todos.map((todo, index) => (
+          <Todo
+            key={index}
+            index={index}
+            todo={todo}
+            completeTodo={completeTodo}
+            removeTodo={removeTodo}
+          />
+        ))}
+        <TodoForm addTodo={addTodo} />
+      </div>
     </div>
   )
 }
