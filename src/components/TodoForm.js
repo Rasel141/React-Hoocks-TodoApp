@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState('')
@@ -12,14 +13,15 @@ const TodoForm = ({ addTodo }) => {
   }
 
   return (
-    <form onSubmit={submitHandler}>
-      <input
+    <Form onSubmit={submitHandler}>
+      <Input
         type='text'
         placeholder='Add todo...'
         onChange={e => setValue(e.target.value)}
         value={value}
+        className="py-5"
       />
-    </form>
+    </Form>
   )
 }
 
