@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Todo from './components/Todo'
 import TodoForm from './components/TodoForm'
 
-import { Jumbotron, ListGroup } from 'reactstrap'
+import { ListGroup } from 'reactstrap'
 
 const App = () => {
   const [todos, setTodos] = useState([
@@ -38,7 +38,7 @@ const App = () => {
   }
 
   return (
-    <Jumbotron>
+    <div className='container'>
       <h1 className='text-center py-3'>Todo App</h1>
       <ListGroup>
         {todos.map((todo, index) => (
@@ -51,8 +51,8 @@ const App = () => {
           />
         ))}
       </ListGroup>
-        <TodoForm addTodo={addTodo} />
-    </Jumbotron>
+      <TodoForm addTodo={addTodo} />
+    </div>
   )
 }
 

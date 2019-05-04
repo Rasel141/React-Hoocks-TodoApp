@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Form, Input } from 'reactstrap';
 
 const TodoForm = ({ addTodo }) => {
   const [value, setValue] = useState('')
@@ -19,7 +19,8 @@ const TodoForm = ({ addTodo }) => {
         placeholder='Add todo...'
         onChange={e => setValue(e.target.value)}
         value={value}
-        className="py-5"
+        className="py-5 mt-3"
+        style={{boxSizing: 'border-box'}}
       />
     </Form>
   )
