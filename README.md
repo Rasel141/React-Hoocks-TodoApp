@@ -7,7 +7,7 @@ Demo https://wonderful-fermi-c52267.netlify.com/
 
 * [React](https://reactjs.org/)
 * [Bootstrap](https://getbootstrap.com)
-* [Bootstrap](https://reactstrap.github.io/)
+* [Reactstrap](https://reactstrap.github.io/)
 
 # What I have done
 
