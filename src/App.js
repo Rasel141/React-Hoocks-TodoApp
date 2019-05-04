@@ -50,8 +50,8 @@ const App = () => {
             removeTodo={removeTodo}
           />
         ))}
-        <TodoForm addTodo={addTodo} />
       </ListGroup>
+        <TodoForm addTodo={addTodo} />
     </Jumbotron>
   )
 }
